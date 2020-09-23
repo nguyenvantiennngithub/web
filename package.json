@@ -1,0 +1,37 @@
+{
+  "name": "education",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "format": "lint-staged",
+    "watch": "node-sass src/resources/scss/style.scss src/public/css/style.css --watch",
+    "start": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nguyenvantiennngithub/web.git"
+  },
+  "author": "VanTiennn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nguyenvantiennngithub/web/issues"
+  },
+  "homepage": "https://github.com/nguyenvantiennngithub/web#readme",
+  "lint-staged": {
+    "src/**/*.{js,json,scss}": "prettier --tab-with 4 --single-quote --trailing-comma all --write "
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "node-sass": "^4.14.1"
+  },
+  "devDependencies": {
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.1.2"
+  }
+}
