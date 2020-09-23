@@ -20,12 +20,11 @@
   },
   "homepage": "https://github.com/nguyenvantiennngithub/web#readme",
   "lint-staged": {
-    "src/**/*.{js,json,scss}": "prettier --tab-with 4 --single-quote --trailing-comma all --write "
+    "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "dependencies": {
