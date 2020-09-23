@@ -4,6 +4,7 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 const { UV_FS_O_FILEMAP } = require('constants');
 const router = require('./router/index.router');
+const connectDB = require('./config/db/index.db');
 const app = express();
 
 app.use(morgan('combined'));
@@ -15,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'resources', 'views'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+connectDB();
 router(app);
 
 app.listen(8080);

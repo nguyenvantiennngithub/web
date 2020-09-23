@@ -1,8 +1,8 @@
 class coursesController {
-  // [GET] /courses
-  index(req, res) {
-    res.send('Courses Page');
-  }
+    // [GET] /courses
+    index(req, res) {
+        res.render('courses/home');
+    }
 }
 
 module.exports = new coursesController();
