@@ -1,12 +1,12 @@
-const express = require('express');
-const morgan = require('morgan');
-const path = require('path');
-const exphbs = require('express-handlebars');
-const { UV_FS_O_FILEMAP } = require('constants');
-const router = require('./router/index.router');
-const app = express();
+                const express = require('express');
+                const morgan = require('morgan');
+                const path = require('path');
+                const exphbs = require('express-handlebars');
+                const { UV_FS_O_FILEMAP } = require('constants');
+                const router = require('./router/index.router');
+                const app = express();
 
-app.use(morgan('combined'));
+                app.use(morgan('combined'));
 
 app.engine('.hbs', exphbs({ extname: '.hbs' }));
 app.set('view engine', '.hbs');
