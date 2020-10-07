@@ -1,2 +1,11 @@
-h1 {
-  color: blue; }
+.container-select-all {
+  display: flex;
+  flex-direction: row;
+  height: 32px; }
+
+.select-all-option {
+  width: 120px;
+  margin: 0 8px; }
+
+.btn-submit-select-all {
+  line-height: 100%; }

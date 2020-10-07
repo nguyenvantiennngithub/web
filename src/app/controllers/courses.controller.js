@@ -69,16 +69,54 @@ class coursesController {
                 next(err);
             });
     }
-    delete(req, res, next) {
+    // [DELETE] courses/:id
+    SoftDelete(req, res, next) {
         // console.log(req.body)
         coursesModule
-            .deleteOne({ _id: req.params.id }, req.body)
+            .delete({ _id: req.params.id })
             .then(() => {
                 res.redirect(`back`);
             })
             .catch((err) => {
                 next(err);
             });
+    }
+    // [PATCH] courses/:id
+    restore(req, res, next) {
+        coursesModule
+            .restore({ _id: req.params.id })
+            .then(() => {
+                res.redirect('back');
+            })
+            .catch((err) => {
+                next(err);
+            });
+    }
+    //[DELETE] /courses/:id
+    forceDelete(req, res, next) {
+        coursesModule
+            .deleteOne({ _id: req.params.id })
+            .then(() => {
+                res.redirect('back');
+            })
+            .catch((err) => {
+                next(err);
+            });
+    }
+    //[GET] /courses/form-handle-handleAction
+    handleAction(req, res, next) {
+        switch (req.body.action) {
+            case 'delete': {
+                coursesModule
+                    .delete({ _id: { $in: req.body.coursesIds } })
+                    .then(() => {
+                        res.redirect('back');
+                    })
+                    .catch((err) => {
+                        next(err);
+                    });
+            }
+        }
     }
 }
 
